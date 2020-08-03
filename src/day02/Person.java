@@ -26,9 +26,6 @@ public class Person {
         this.gender = gender;
         this.salary = salary;
     }
-    Person(){
-
-    }
 
     @Override
     public String toString() {

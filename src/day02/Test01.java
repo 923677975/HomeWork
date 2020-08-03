@@ -9,25 +9,18 @@ import java.util.Scanner;
  *
  * @author Bonnie
  */
+
 public class Test01 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         System.out.println("请输入一个字符串：");
-        String str = sc.next();
-        String regex = "[\\d]+";
-        String regex1 = "[\\d.]+";
+        String str = new Scanner(System.in).next();
 
-        if (str.matches(regex)) {
-            System.out.println("是整数！");
-            int a = Integer.parseInt(str);
-            System.out.println("a*10:"+a*10);
-        } else if (str.matches(regex1)) {
-            System.out.println("是小数！");
-            int b= Integer.parseInt(str);
-            System.out.println("b*5:"+b*5);
+        if (str.matches("[\\d]+")) {
+            System.out.println("是整数！\n" + "a * 10 :" + Integer.parseInt(str) * 10);
+        } else if (str.matches("[\\d+\\.\\d]+")) {
+            System.out.println("是小数！\n" + "b * 5 :" + Double.valueOf(str) * 5);
         } else {
             System.out.println("不是数字");
         }
-
     }
 }

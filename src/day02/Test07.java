@@ -16,9 +16,7 @@ public class Test07 {
         while (true) {
             String str = sc.next();
             String[] a = str.split("[\\-\\+\\*\\/]");
-            int a1 = Integer.valueOf(a[0]);
-            int a2 = Integer.valueOf(a[1]);
-            System.out.println(a[0] + "+" + a[1] + "=" + (a1 + a2));
+            System.out.println(a[0] + "+" + a[1] + "=" + (Double.valueOf(a[0]) + Double.valueOf(a[1])));
         }
     }
 }

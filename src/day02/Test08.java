@@ -16,24 +16,13 @@ public class Test08 {
     public static void main(String[] args) {
 
         System.out.println("请输入员工信息：");
-        Scanner sc = new Scanner(System.in);
-        String message = sc.next();
-        String[] mes = message.split("\\;");
-        Person[] person = new Person[mes.length];
+        String message = new Scanner(System.in).next();
+        String[] meg = message.split(";");
+        Person[] person = new Person[meg.length];
 
-        for (int i = 0; i < person.length; i++) {
-
-            String personMes = mes[i];
-            String[] personData = personMes.split("\\,");
-            String name = personData[0];
-            int age = Integer.valueOf(personData[1]);
-            String gender = personData[2];
-            int salary = Integer.valueOf(personData[3]);
-            Person p = new Person(name, age, gender, salary);
-            person[i] = p;
-        }
-
-        for (int i = 0; i < person.length; i++) {
+        for (int i = 0; i < meg.length; i++) {
+            String[] personData = meg[i].split(",");
+            person[i] = new Person(personData[0], Integer.valueOf(personData[1]), personData[2], Integer.valueOf(personData[3]));
             System.out.println(person[i]);
         }
     }

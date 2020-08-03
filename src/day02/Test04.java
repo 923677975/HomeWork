@@ -8,7 +8,6 @@ package day02;
 public class Test04 {
     public static void main(String[] args) {
         String str = "123abc456def789ghi";
-        str = str.replaceAll("[a-z]+","#char#");
-        System.out.println(str);
+        System.out.println(str.replaceAll("[a-zA-Z]+", "#char#"));
     }
 }

@@ -9,7 +9,6 @@ package day02;
 public class Test06 {
     public static void main(String[] args) {
         String str = "0576-88802877";
-        String regex = "^[\\d]{3,4}-[\\d]{7,8}$";
-        System.out.println(str.matches(regex));
+        System.out.println(str.matches("^[\\d]{3,4}-[\\d]{7,8}$"));
     }
 }
