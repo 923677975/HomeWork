@@ -19,10 +19,8 @@ public class Test01 {
         list.offer(4);
         list.offer(5);
 
-        Iterator it = list.iterator();
         for (int a : list) {
-            System.out.println(it.next());
+            System.out.println(a);
         }
     }
-
 }

@@ -16,10 +16,10 @@ public class Test02 {
         stack.push(3);
         stack.push(4);
         stack.push(5);
-        
+
         Iterator it = stack.iterator();
-        for (int i:stack) {
-            System.out.println(it.next());
+        for (int i : stack) {
+            System.out.println(i);
         }
     }
 }

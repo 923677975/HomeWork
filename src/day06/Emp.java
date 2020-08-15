@@ -1,6 +1,6 @@
-package day04;
+package day06;
 
-import java.util.Calendar;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
@@ -16,23 +16,17 @@ import java.util.Objects;
  * 定义toString方法，格式如:
  * 张三,25,男,5000,2006-02-15
  * <p>
- * 定义equals方法，要求名字以及年龄相同，则认为内容一致。
+ * 定义equals方法，要求名字相同，则认为内容一致。
  *
  * @author Bonnie
  */
-public class Emp {
+public class Emp implements Serializable {
 
-    Calendar calendar = Calendar.getInstance();
     private String name;
     private int age;
     private String gender;
     private int salary;
     private Date hiredate;
-    private Date become;
-
-
-    public Emp() {
-    }
 
     public Emp(String name, int age, String gender, int salary, Date hiredate) {
         this.name = name;
@@ -40,15 +34,11 @@ public class Emp {
         this.gender = gender;
         this.salary = salary;
         this.hiredate = hiredate;
-        calendar.setTime(hiredate);
-        calendar.add(Calendar.MONTH, 3);
-        calendar.set(Calendar.DAY_OF_WEEK, Calendar.FRIDAY);
-        this.become = calendar.getTime();
     }
 
     @Override
     public String toString() {
-        return name + "," + age + "," + gender + "," + salary + "," + hiredate + "," + become;
+        return name + "," + age + "," + gender + "," + salary + "," + hiredate + "\n";
     }
 
     @Override
@@ -56,13 +46,12 @@ public class Emp {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Emp emp = (Emp) o;
-        return age == emp.age &&
-                Objects.equals(name, emp.name);
+        return Objects.equals(name, emp.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, age, gender, salary, hiredate);
+        return Objects.hash(name);
     }
 
     public String getName() {
@@ -105,4 +94,3 @@ public class Emp {
         this.hiredate = hiredate;
     }
 }
-

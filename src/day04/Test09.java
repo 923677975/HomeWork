@@ -22,8 +22,7 @@ public class Test09 {
     public static void main(String[] args) throws ParseException {
         Scanner sc = new Scanner(System.in);
         SimpleDateFormat sim = new SimpleDateFormat("yyyy-MM-dd");
-        Emp emp;
-        ArrayList al = new ArrayList();
+        ArrayList<Emp> al = new ArrayList<>();
         String str = sc.next();
         String[] a = str.split(";");
         for (int i = 0; i < a.length; i++) {

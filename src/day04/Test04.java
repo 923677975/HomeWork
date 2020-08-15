@@ -28,7 +28,7 @@ public class Test04 {
 
         List<Integer> al1 = al.subList(3, 7);
         System.out.println(al1);
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i <= 3; i++) {
             al1.set(i, al1.get(i) * 10);
         }
         System.out.println(al1);
